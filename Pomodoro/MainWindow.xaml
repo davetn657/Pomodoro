@@ -15,30 +15,28 @@
             </Button.Resources>
         </Button>
         
-        <ComboBox Name="worktimes" Height="20" Width="150" Margin="0,0,190,120" SelectedIndex="0">
+        <ComboBox Name="worktimes" Height="20" Width="150" Margin="0,0,190,120" SelectedIndex="0" IsReadOnly="True">
             <ComboBoxItem Content="10"></ComboBoxItem>
             <ComboBoxItem Content="15"></ComboBoxItem>
             <ComboBoxItem Content="20"></ComboBoxItem>
             <ComboBoxItem Content="25"></ComboBoxItem>
             <ComboBoxItem Content="30"></ComboBoxItem>
-            <ComboBoxItem Content="Custom"></ComboBoxItem>
         </ComboBox>
-        <ComboBox Name="resttimes" Height="20" Width="150" Margin="190,0,0,120" SelectedIndex="0">
+        <ComboBox Name="resttimes" Height="20" Width="150" Margin="190,0,0,120" SelectedIndex="0" IsReadOnly="True">
             <ComboBoxItem Content="5"></ComboBoxItem>
             <ComboBoxItem Content="10"></ComboBoxItem>
             <ComboBoxItem Content="15"></ComboBoxItem>
             <ComboBoxItem Content="20"></ComboBoxItem>
-            <ComboBoxItem Content="Custom"></ComboBoxItem>
         </ComboBox>
 
-        <TextBox Name="worktxt" Height="70" Width="150" Margin="0,0,190,15" TextAlignment="Center" FontSize="48" TextChanged="worktxt_TextChanged" Text="{Binding ElementName=worktimes, Path=Text}">
+        <TextBox Name="worktxt" Height="70" Width="150" Margin="0,0,190,15" TextAlignment="Center" FontSize="48" Text="{Binding ElementName=worktimes, Path=Text}">
             <TextBox.Resources>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="10"></Setter>
                 </Style>
             </TextBox.Resources>
         </TextBox>
-        <TextBox Name="resttxt" Height="70" Width="150" Margin="190,0,0,15" Text="5" TextAlignment="Center" FontSize="48" TextChanged="resttxt_TextChanged" >
+        <TextBox Name="resttxt" Height="70" Width="150" Margin="190,0,0,15" TextAlignment="Center" FontSize="48" Text="{Binding ElementName=resttimes, Path=Text}">
             <TextBox.Resources>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="10"></Setter>

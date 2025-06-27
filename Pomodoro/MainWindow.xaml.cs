@@ -8,6 +8,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
 namespace Pomodoro
 {
@@ -18,6 +19,9 @@ namespace Pomodoro
     {
         public int _workTime = 10;
         public int _restTime = 5;
+        public int _workCounter = 0;
+        public int _restCounter = 0;
+        DispatcherTimer _dispatcherTimer;
 
         public MainWindow()
         {
@@ -26,20 +30,34 @@ namespace Pomodoro
 
         private void startbtn_Click(object sender, RoutedEventArgs e)
         {
-            //set _workTime to the value in worktxt
-            //set _restTime to the value in resttxt
             //start work timer and minimize
             //when work timer is over open new form
-        }
-
-        private void worktxt_TextChanged(object sender, TextChangedEventArgs e)
-        {
             _workTime = Int32.Parse(worktxt.Text);
+            _restTime = Int32.Parse(resttxt.Text);
+
+            _workCounter = _workTime;
+            _restCounter = _restTime;
+
+            _dispatcherTimer = new System.Windows.Threading.DispatcherTimer();
+            _dispatcherTimer.Tick += new EventHandler(Timer_Tick);
+            _dispatcherTimer.Interval = TimeSpan.FromMinutes(1);
+            _dispatcherTimer.Start();
+
         }
 
-        private void resttxt_TextChanged(object sender, TextChangedEventArgs e)
+        private void Timer_Tick(object sender, EventArgs e)
         {
-            _restTime = Int32.Parse(resttxt.Text);
+            // Logic to handle timer tick
+            // This could include updating a label with the remaining time
+            worktxt.Text = _workCounter.ToString();
+            _workCounter--;
+
+            if (_workCounter == 0)
+            {
+                System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"C:\Projects\Pomodoro\Pomodoro\Media\Sounds\blip.wav");
+                player.Play();
+                _dispatcherTimer.Stop();
+            }
         }
     }
 }
