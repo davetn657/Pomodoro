@@ -1,0 +1,49 @@
+﻿<Window x:Class="Pomodoro.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Pomodoro"
+        mc:Ignorable="d"
+        Title="Pomodoro" Height="180" Width="360">
+    <Grid>
+        <Button Name="startbtn" Content="Start Timer" Height="30" Width="340" Margin="0,100,0,0" Click="startbtn_Click">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10"></Setter>
+                </Style>
+            </Button.Resources>
+        </Button>
+        
+        <ComboBox Name="worktimes" Height="20" Width="150" Margin="0,0,190,120" SelectedIndex="0">
+            <ComboBoxItem Content="10"></ComboBoxItem>
+            <ComboBoxItem Content="15"></ComboBoxItem>
+            <ComboBoxItem Content="20"></ComboBoxItem>
+            <ComboBoxItem Content="25"></ComboBoxItem>
+            <ComboBoxItem Content="30"></ComboBoxItem>
+            <ComboBoxItem Content="Custom"></ComboBoxItem>
+        </ComboBox>
+        <ComboBox Name="resttimes" Height="20" Width="150" Margin="190,0,0,120" SelectedIndex="0">
+            <ComboBoxItem Content="5"></ComboBoxItem>
+            <ComboBoxItem Content="10"></ComboBoxItem>
+            <ComboBoxItem Content="15"></ComboBoxItem>
+            <ComboBoxItem Content="20"></ComboBoxItem>
+            <ComboBoxItem Content="Custom"></ComboBoxItem>
+        </ComboBox>
+
+        <TextBox Name="worktxt" Height="70" Width="150" Margin="0,0,190,15" TextAlignment="Center" FontSize="48" TextChanged="worktxt_TextChanged" Text="{Binding ElementName=worktimes, Path=Text}">
+            <TextBox.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10"></Setter>
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+        <TextBox Name="resttxt" Height="70" Width="150" Margin="190,0,0,15" Text="5" TextAlignment="Center" FontSize="48" TextChanged="resttxt_TextChanged" >
+            <TextBox.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10"></Setter>
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+    </Grid>
+</Window>
