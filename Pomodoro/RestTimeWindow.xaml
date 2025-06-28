@@ -1,0 +1,36 @@
+﻿<Window x:Class="Pomodoro.RestTimeWindow"
+        x:Name="RestWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Pomodoro"
+        mc:Ignorable="d"
+        Title="RestTimeWindow" Height="450" Width="800"
+        WindowState="Maximized"
+        WindowStyle="None"
+        Topmost="True">
+    <Grid>
+
+
+        <ProgressBar Name="restprogbar" Height="40" Width="700" Margin="0,100,0,0">
+            <ProgressBar.Triggers>
+                <EventTrigger RoutedEvent="ProgressBar.Loaded">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="restprogbar"
+                                             Storyboard.TargetProperty="Value"
+                                             From="100" To="0" Duration="{Binding ElementName=RestWindow, Path=_restTime}"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </ProgressBar.Triggers>
+        </ProgressBar>
+
+        <Button Name="tiponebtn" Height="100" Width="100" Margin="0,300,600,0" Click="tiponebtn_Click"></Button>
+        <Button Name="tiptwobtn" Height="100" Width="100" Margin="0,300,300,0"></Button>
+        <Button Name="tipthreebtn" Height="100" Width="100" Margin="0,300,0,0"></Button>
+        <Button Name="tipfourbtn" Height="100" Width="100" Margin="300,300,00,0"></Button>
+        <Button Name="tipfivebtn" Height="100" Width="100" Margin="600,300,0,0"></Button>
+    </Grid>
+</Window>

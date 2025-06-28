@@ -18,3 +18,5 @@ C:\Projects\Pomodoro\Pomodoro\obj\Debug\net6.0-windows\refint\Pomodoro.dll
 C:\Projects\Pomodoro\Pomodoro\obj\Debug\net6.0-windows\Pomodoro.pdb
 C:\Projects\Pomodoro\Pomodoro\obj\Debug\net6.0-windows\Pomodoro.genruntimeconfig.cache
 C:\Projects\Pomodoro\Pomodoro\obj\Debug\net6.0-windows\ref\Pomodoro.dll
+C:\Projects\Pomodoro\Pomodoro\obj\Debug\net6.0-windows\RestTimeWindow.g.cs
+C:\Projects\Pomodoro\Pomodoro\obj\Debug\net6.0-windows\RestTimeWindow.baml

@@ -14,7 +14,14 @@
                 </Style>
             </Button.Resources>
         </Button>
-        
+        <Button Name="stopbtn" Content="Stop Timer" Height="30" Width="340" Margin="0,100,0,0" IsEnabled="False" Visibility="Hidden" Click="stopbtn_Click">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10"></Setter>
+                </Style>
+            </Button.Resources>
+        </Button>
+
         <ComboBox Name="worktimes" Height="20" Width="150" Margin="0,0,190,120" SelectedIndex="0" IsReadOnly="True">
             <ComboBoxItem Content="10"></ComboBoxItem>
             <ComboBoxItem Content="15"></ComboBoxItem>
