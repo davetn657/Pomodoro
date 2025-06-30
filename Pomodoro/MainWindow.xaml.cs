@@ -52,12 +52,6 @@ namespace Pomodoro
 
         private void startbtn_Click(object sender, RoutedEventArgs e)
         {
-            _workTime = Int32.Parse(worktxt.Text);
-            _restTime = Int32.Parse(resttxt.Text);
-
-            _workCounter = _workTime;
-            _restCounter = _restTime;
-
             StartWorkTimer();
         }
 
@@ -74,11 +68,17 @@ namespace Pomodoro
             stopbtn.IsEnabled = true;
             stopbtn.Visibility = Visibility.Visible;
 
+            _workTime = Int32.Parse(worktxt.Text);
+            _restTime = Int32.Parse(resttxt.Text);
+
+            _workCounter = _workTime;
+            _restCounter = _restTime;
+
             //start work timer and minimize
             //when work timer is over open new form
             _dispatcherTimer = new System.Windows.Threading.DispatcherTimer();
             _dispatcherTimer.Tick += new EventHandler(Timer_Tick);
-            _dispatcherTimer.Interval = TimeSpan.FromSeconds(1); //Change to minutes
+            _dispatcherTimer.Interval = TimeSpan.FromMinutes(1);
             _dispatcherTimer.Start();
 
             this.WindowState = WindowState.Minimized;
@@ -112,7 +112,7 @@ namespace Pomodoro
                 _dispatcherTimer.Stop();
 
                 // Open rest timer
-                RestTimeWindow restTimeWindow = new RestTimeWindow(_restCounter);
+                RestTimeWindow restTimeWindow = new RestTimeWindow(_restCounter, this);
                 restTimeWindow.Owner = this;
                 restTimeWindow.Show();
             }

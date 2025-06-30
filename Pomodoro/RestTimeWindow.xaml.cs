@@ -21,15 +21,20 @@ namespace Pomodoro
     public partial class RestTimeWindow : Window
     {
         DispatcherTimer _dispatcherTimer;
+        MainWindow _mainWindow;
         public int _restCounter = 0;
         public string _restTime { get; set; }
 
-        public RestTimeWindow(int restTime)
+        public RestTimeWindow(int restTime, Window mainWindow)
         {
             _restCounter = restTime;
             _restTime = ($"0:{restTime}:0");
 
+            _mainWindow = mainWindow as MainWindow;
+
             InitializeComponent();
+
+            StartRestTimer();
         }
        
 
@@ -47,7 +52,6 @@ namespace Pomodoro
                 player.Play();
 
                 StopRestTimer();
-
             }
         }
 
@@ -55,13 +59,15 @@ namespace Pomodoro
         {
             _dispatcherTimer = new System.Windows.Threading.DispatcherTimer();
             _dispatcherTimer.Tick += new EventHandler(Timer_Tick);
-            _dispatcherTimer.Interval = TimeSpan.FromSeconds(1); //Change to minutes
+            _dispatcherTimer.Interval = TimeSpan.FromMinutes(1);
             _dispatcherTimer.Start();
         }
 
         private void StopRestTimer()
         {
+            _mainWindow.StartWorkTimer();
             _dispatcherTimer.Stop();
+
             this.Close();
         }
 
