@@ -78,10 +78,5 @@ namespace Pomodoro
 
             this.Close();
         }
-
-        private void tiponebtn_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
     }
 }

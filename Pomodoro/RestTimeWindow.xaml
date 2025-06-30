@@ -12,9 +12,9 @@
         Topmost="True"
         KeyDown="Esc_Key_Pressed">
     <Grid>
-        <TextBox Text="Press Esc to stop" Height="20" Width="95"  HorizontalAlignment="Right" VerticalAlignment="Top"></TextBox>
+        <TextBox Text="Press Esc to stop" Height="30" Width="125" VerticalAlignment="Bottom" Margin="0,0,0,10" FontSize="16" BorderBrush="{x:Null}"></TextBox>
 
-        <ProgressBar Name="restprogbar" Height="40" Width="700" VerticalAlignment="Bottom" Margin="0,0,0,150">
+        <ProgressBar Name="restprogbar" Height="50" Width="700" VerticalAlignment="Bottom" Margin="0,0,0,50">
             <ProgressBar.Triggers>
                 <EventTrigger RoutedEvent="ProgressBar.Loaded">
                     <BeginStoryboard>
@@ -26,12 +26,11 @@
                     </BeginStoryboard>
                 </EventTrigger>
             </ProgressBar.Triggers>
+            <ProgressBar.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="20"></Setter>
+                </Style>
+            </ProgressBar.Resources>
         </ProgressBar>
-
-        <Button Name="tiponebtn" Height="100" Width="100" VerticalAlignment="Bottom" Margin="0,0,600,20" Click="tiponebtn_Click"></Button>
-        <Button Name="tiptwobtn" Height="100" Width="100" VerticalAlignment="Bottom" Margin="0,0,300,20"></Button>
-        <Button Name="tipthreebtn" Height="100" Width="100" VerticalAlignment="Bottom" Margin="0,0,0,20"></Button>
-        <Button Name="tipfourbtn" Height="100" Width="100" VerticalAlignment="Bottom" Margin="300,0,00,20"></Button>
-        <Button Name="tipfivebtn" Height="100" Width="100" VerticalAlignment="Bottom" Margin="600,0,0,20"></Button>
     </Grid>
 </Window>
