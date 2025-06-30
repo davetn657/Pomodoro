@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Pomodoro"
         mc:Ignorable="d"
-        Title="Pomodoro" Height="180" Width="360">
+        Title="Pomodoro" Height="180" Width="360"
+        KeyDown="Esc_Key_Pressed">
     <Grid>
         <Button Name="startbtn" Content="Start Timer" Height="30" Width="340" Margin="0,100,0,0" Click="startbtn_Click">
             <Button.Resources>

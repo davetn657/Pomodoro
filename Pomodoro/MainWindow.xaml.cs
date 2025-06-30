@@ -60,6 +60,14 @@ namespace Pomodoro
             StopWorkTimer();
         }
 
+        private void Esc_Key_Pressed(object sender, System.Windows.Input.KeyEventArgs e)
+        {
+            if (e.Key == Key.Escape)
+            {
+                StopWorkTimer();
+            }
+        }
+
         public void StartWorkTimer()
         {
             startbtn.IsEnabled = false;
@@ -93,6 +101,9 @@ namespace Pomodoro
             stopbtn.IsEnabled = false;
             stopbtn.Visibility = Visibility.Hidden;
 
+            System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"..\Media\Sounds\blip.wav");
+            player.Play();
+
             if (_dispatcherTimer != null)
             {
                 _dispatcherTimer.Stop();
@@ -107,9 +118,7 @@ namespace Pomodoro
 
             if (_workCounter == 0)
             {
-                System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"..\Media\Sounds\blip.wav");
-                player.Play();
-                _dispatcherTimer.Stop();
+                StopWorkTimer();
 
                 // Open rest timer
                 RestTimeWindow restTimeWindow = new RestTimeWindow(_restCounter, this);

@@ -44,13 +44,14 @@ namespace Pomodoro
 
             if(_restCounter == 0)
             {
-                //Play sound indicating end of rest time
-                //Stop timer
-                //Start Work Timer
-                //Close this window
-                System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"..\Media\Sounds\blip.wav");
-                player.Play();
+                StopRestTimer();
+            }
+        }
 
+        private void Esc_Key_Pressed(object sender, System.Windows.Input.KeyEventArgs e)
+        {
+            if (e.Key == Key.Escape)
+            {
                 StopRestTimer();
             }
         }
@@ -65,8 +66,15 @@ namespace Pomodoro
 
         private void StopRestTimer()
         {
-            _mainWindow.StartWorkTimer();
+            //Play sound indicating end of rest time
+            //Stop timer
+            //Start Work Timer
+            //Close this window
+            System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"..\Media\Sounds\blip.wav");
+            player.Play();
+
             _dispatcherTimer.Stop();
+            _mainWindow.StartWorkTimer();
 
             this.Close();
         }
