@@ -26,11 +26,7 @@
                     </BeginStoryboard>
                 </EventTrigger>
             </ProgressBar.Triggers>
-            <ProgressBar.Resources>
-                <Style TargetType="Border">
-                    <Setter Property="CornerRadius" Value="20"></Setter>
-                </Style>
-            </ProgressBar.Resources>
+            
         </ProgressBar>
     </Grid>
 </Window>

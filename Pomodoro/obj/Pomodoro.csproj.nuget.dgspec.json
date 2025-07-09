@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Projects\\Pomodoro\\Pomodoro\\Pomodoro.csproj": {}
+    "C:\\Users\\davei\\Documents\\.Coding\\Github\\Pomodoro\\Pomodoro\\Pomodoro.csproj": {}
   },
   "projects": {
-    "C:\\Projects\\Pomodoro\\Pomodoro\\Pomodoro.csproj": {
+    "C:\\Users\\davei\\Documents\\.Coding\\Github\\Pomodoro\\Pomodoro\\Pomodoro.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Projects\\Pomodoro\\Pomodoro\\Pomodoro.csproj",
+        "projectUniqueName": "C:\\Users\\davei\\Documents\\.Coding\\Github\\Pomodoro\\Pomodoro\\Pomodoro.csproj",
         "projectName": "Pomodoro",
-        "projectPath": "C:\\Projects\\Pomodoro\\Pomodoro\\Pomodoro.csproj",
+        "projectPath": "C:\\Users\\davei\\Documents\\.Coding\\Github\\Pomodoro\\Pomodoro\\Pomodoro.csproj",
         "packagesPath": "C:\\Users\\davei\\.nuget\\packages\\",
-        "outputPath": "C:\\Projects\\Pomodoro\\Pomodoro\\obj\\",
+        "outputPath": "C:\\Users\\davei\\Documents\\.Coding\\Github\\Pomodoro\\Pomodoro\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -45,7 +45,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.200"
+        "SdkAnalysisLevel": "9.0.300"
       },
       "frameworks": {
         "net6.0-windows7.0": {
@@ -61,6 +61,24 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[6.0.36, 6.0.36]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[6.0.36, 6.0.36]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[6.0.36, 6.0.36]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[6.0.36, 6.0.36]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
@@ -69,7 +87,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301\\RuntimeIdentifierGraph.json"
         }
       }
     }
